@@ -20,7 +20,7 @@ export function CategoryTabs({ activeCategory, setActiveCategory, setActiveSubca
           className={`flex items-center px-6 py-3 font-medium transition-colors ${
             activeCategory === category 
               ? 'text-primary border-b-2 border-primary' 
-              : 'text-muted-foreground hover:text-primary'
+              : 'text-black hover:text-primary'
           }`}
           onClick={() => {
             setActiveCategory(category);

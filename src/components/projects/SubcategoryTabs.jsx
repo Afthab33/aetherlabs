@@ -27,8 +27,8 @@ export function SubcategoryTabs({ activeCategory, categories, activeSubcategory,
           key={subcategory}
           className={`flex items-center px-4 py-2 mr-4 mb-4 rounded-full transition-colors ${
             activeSubcategory === subcategory
-              ? 'bg-[#8A5CF6] text-black border border-[#8A5CF6]/20 font-medium'
-              : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100'
+              ? 'bg-primary text-white border border-primary/20 font-medium'
+              : 'bg-background text-foreground border border-border hover:bg-muted'
           }`}
           onClick={() => setActiveSubcategory(subcategory)}
         >

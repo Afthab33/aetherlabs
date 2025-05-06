@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (transparent) -->
+  <rect width="180" height="100" fill="transparent"/>
+  
+  <!-- Letter A (white) - expanded to fill left portion completely -->
+  <path d="M0,100 L35,0 L75,0 L110,100 L75,100 L70,80 L40,80 L35,100 Z M45,60 L65,60 L55,20 Z" 
+        fill="#FFFFFF"/>
+  
+  <!-- Letter L (purple) - expanded to fill right portion completely -->
+  <path d="M75,0 L110,0 L110,70 L180,70 L180,100 L75,100 Z" 
+        fill="#7842F5"/>
+</svg>

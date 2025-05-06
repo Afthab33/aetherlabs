@@ -64,13 +64,13 @@ export function ProjectDetail({
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Back Navigation */}
-      <div className="bg-gray-50 py-4 px-6 border-b border-gray-200">
+      <div className="bg-muted py-4 px-6 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <button 
             onClick={navigateToHomeProjects}
-            className="inline-flex items-center text-gray-600 hover:text-[#8A5CF6]"
+            className="inline-flex items-center text-foreground hover:text-primary"
           >
             <ChevronLeft className="h-4 w-4 mr-1" />
             Back to Projects
@@ -79,20 +79,20 @@ export function ProjectDetail({
       </div>
       
       {/* Project Header */}
-      <header className="py-12 px-6 bg-gray-50 border-b border-gray-200">
+      <header className="py-12 px-6 bg-muted border-b border-border">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             {categories.map((category, index) => (
               <span 
                 key={index} 
-                className="text-sm px-3 py-1 bg-[#8A5CF6]/10 text-[#8A5CF6] rounded-full"
+                className="text-sm px-3 py-1 bg-primary/10 text-black rounded-full"
               >
                 {category}
               </span>
             ))}
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mb-6">{description}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{title}</h1>
+          <p className="text-xl text-foreground max-w-3xl mb-6">{description}</p>
           
           {/* Project Links */}
           <div className="flex gap-4">
@@ -113,7 +113,7 @@ export function ProjectDetail({
                 href={links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#8A5CF6] text-white rounded-md hover:bg-[#7a50e3] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors"
               >
                 <ExternalLink size={18} />
                 <span>Live Demo</span>
@@ -125,9 +125,9 @@ export function ProjectDetail({
       
       {/* Authors Section */}
       {authors.length > 0 && (
-        <section className="py-8 px-6 border-b border-gray-200">
+        <section className="py-8 px-6 border-b border-border">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-xl font-semibold text-gray-900 mb-6">Authors</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Authors</h2>
             <div className="flex flex-wrap gap-6">
               {authors.map((author, index) => (
                 <div key={index} className="flex items-center gap-3">
@@ -139,8 +139,8 @@ export function ProjectDetail({
                     />
                   )}
                   <div>
-                    <div className="font-medium text-gray-900">{author.name}</div>
-                    {author.role && <div className="text-sm text-gray-500">{author.role}</div>}
+                    <div className="font-medium text-foreground">{author.name}</div>
+                    {author.role && <div className="text-sm text-foreground/70">{author.role}</div>}
                   </div>
                 </div>
               ))}
@@ -151,19 +151,19 @@ export function ProjectDetail({
       
       {/* Media Gallery */}
       {(media.images.length > 0 || media.videos.length > 0) && (
-        <section className="py-8 px-6 border-b border-gray-200">
+        <section className="py-8 px-6 border-b border-border">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-xl font-semibold text-gray-900 mb-6">Media</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Media</h2>
             
             {/* Images */}
             {media.images.length > 0 && (
               <div className="mb-8">
-                <h3 className="text-lg font-medium text-gray-700 mb-4">Images</h3>
+                <h3 className="text-lg font-medium text-foreground mb-4">Images</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {media.images.map((image, index) => (
                     <div 
                       key={index} 
-                      className="bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-pointer"
+                      className="bg-muted rounded-lg overflow-hidden border border-border cursor-pointer"
                       onClick={() => openImageGallery(index)}
                     >
                       <img 
@@ -172,7 +172,7 @@ export function ProjectDetail({
                         className="w-full h-48 object-cover"
                       />
                       {image.caption && (
-                        <div className="p-3 text-sm text-gray-600">{image.caption}</div>
+                        <div className="p-3 text-sm text-foreground">{image.caption}</div>
                       )}
                     </div>
                   ))}
@@ -183,12 +183,12 @@ export function ProjectDetail({
             {/* Videos */}
             {media.videos.length > 0 && (
               <div>
-                <h3 className="text-lg font-medium text-gray-700 mb-4">Videos</h3>
+                <h3 className="text-lg font-medium text-foreground mb-4">Videos</h3>
                 <div className="flex justify-center">
                   {media.videos.map((video, index) => (
                     <div 
                       key={index} 
-                      className="bg-gray-100 rounded-lg overflow-hidden border border-gray-200 w-full max-w-3xl"
+                      className="bg-muted rounded-lg overflow-hidden border border-border w-full max-w-3xl"
                     >
                       <div className="aspect-video">
                         <iframe
@@ -201,7 +201,7 @@ export function ProjectDetail({
                         ></iframe>
                       </div>
                       {video.caption && (
-                        <div className="p-3 text-sm text-gray-600 text-center">{video.caption}</div>
+                        <div className="p-3 text-sm text-foreground text-center">{video.caption}</div>
                       )}
                     </div>
                   ))}
@@ -215,18 +215,18 @@ export function ProjectDetail({
       {/* Project Content */}
       <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Project Description</h2>
+          <h2 className="text-xl font-semibold text-foreground mb-6">Project Description</h2>
           <div className="prose prose-lg max-w-none">
             {content.map((section, index) => (
               <div key={index} className="mb-8">
-                {section.title && <h3 className="text-xl font-medium mb-4">{section.title}</h3>}
+                {section.title && <h3 className="text-xl font-medium text-foreground mb-4">{section.title}</h3>}
                 {section.paragraphs && section.paragraphs.map((paragraph, idx) => (
-                  <p key={idx} className="mb-4">{paragraph}</p>
+                  <p key={idx} className="mb-4 text-foreground">{paragraph}</p>
                 ))}
                 {section.list && (
                   <ul className="list-disc pl-5 mb-4">
                     {section.list.map((item, idx) => (
-                      <li key={idx} className="mb-2">{item}</li>
+                      <li key={idx} className="mb-2 text-foreground">{item}</li>
                     ))}
                   </ul>
                 )}
@@ -236,7 +236,7 @@ export function ProjectDetail({
         </div>
       </section>
       
-      {/* Full-screen Image Gallery */}
+      {/* Image gallery modal */}
       {currentImageIndex !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
           <button 

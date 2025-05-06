@@ -24,14 +24,14 @@ export function ProjectCard({ project }) {
           {project.categories && project.categories.map((category, index) => (
             <span 
               key={index} 
-              className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
+              className="text-xs px-2 py-1 bg-primary/10 text-black rounded-full"
             >
               {category}
             </span>
           ))}
         </div>
-        <h3 className="text-xl font-bold mb-2 text-card-foreground">{project.title}</h3>
-        <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
+        <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+        <p className="text-foreground mb-4 flex-grow">{project.description}</p>
         <Link 
           to={`/projects/${project.slug}`} 
           className="inline-flex items-center text-primary hover:text-primary/80 font-medium"

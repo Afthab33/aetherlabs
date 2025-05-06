@@ -43,49 +43,51 @@
 
 :root {
   --radius: 0.625rem;
-  /* Purple as primary color with black text for better contrast */
-  --primary: #8A5CF6;
+  /* Darker purple as primary color with black text for better contrast */
+  --primary: #7842F5; /* Darkened from #8A5CF6 */
   --primary-foreground: black;
   
-  /* Other colors remain the same */
+  /* Make foreground color pure black for consistency */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: black; /* Changed from oklch(0.145 0 0) to pure black */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: black; /* Changed to pure black */
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: black; /* Changed to pure black */
   --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: black; /* Changed to pure black */
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: rgba(0, 0, 0, 0.65); /* Changed to semi-transparent black */
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent-foreground: black; /* Changed to pure black */
+  
+  /* Other colors remain the same */
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   
-  /* Charts with purple accent */
-  --chart-1: #8A5CF6;
+  /* Charts with darker purple accent */
+  --chart-1: #7842F5; /* Darkened from #8A5CF6 */
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   
-  /* Sidebar colors with improved contrast */
+  /* Sidebar colors with darker purple */
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #8A5CF6;
+  --sidebar-foreground: black; /* Changed to pure black */
+  --sidebar-primary: #7842F5; /* Darkened from #8A5CF6 */
   --sidebar-primary-foreground: black;
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent-foreground: black; /* Changed to pure black */
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
   /* Updated primary color for dark mode with black text */
-  --primary: #8A5CF6;
+  --primary: #7842F5; /* Darkened from #8A5CF6 */
   --primary-foreground: black;
   
   /* Other dark mode colors */
@@ -106,8 +108,8 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   
-  /* Dark mode charts with purple accent */
-  --chart-1: #8A5CF6;
+  /* Dark mode charts with darker purple accent */
+  --chart-1: #7842F5; /* Darkened from #8A5CF6 */
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
@@ -116,7 +118,7 @@
   /* Dark mode sidebar with improved contrast */
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #8A5CF6;
+  --sidebar-primary: #7842F5; /* Darkened from #8A5CF6 */
   --sidebar-primary-foreground: black;
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -130,5 +132,33 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Global text color overrides */
+@layer utilities {
+  /* Ensure all gray text is overridden with black */
+  .text-gray-400, .text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900 {
+    color: black;
+  }
+  
+  /* For prose content like articles and blog posts */
+  .prose {
+    --tw-prose-body: black;
+    --tw-prose-headings: black;
+    --tw-prose-lead: black;
+    --tw-prose-links: #7842F5; /* Updated to darker purple */
+    --tw-prose-bold: black;
+    --tw-prose-counters: black;
+    --tw-prose-bullets: black;
+    --tw-prose-hr: black;
+    --tw-prose-quotes: black;
+    --tw-prose-quote-borders: #7842F5; /* Updated to darker purple */
+    --tw-prose-captions: black;
+    --tw-prose-code: black;
+    --tw-prose-pre-code: black;
+    --tw-prose-pre-bg: #f3f4f6;
+    --tw-prose-th-borders: #d1d5db;
+    --tw-prose-td-borders: #e5e7eb;
   }
 }

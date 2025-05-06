@@ -27,19 +27,13 @@ export function Header() {
         <div className="flex space-x-6">
           <button 
             onClick={() => scrollToSection('projects')} 
-            className="text-muted-foreground hover:text-primary"
+            className="text-black font-bold hover:text-primary"
           >
             Projects
           </button>
           <button 
-            onClick={() => scrollToSection('collaborators')} 
-            className="text-muted-foreground hover:text-primary"
-          >
-            Collaborators
-          </button>
-          <button 
             onClick={() => scrollToSection('about')} 
-            className="text-muted-foreground hover:text-primary"
+            className="text-black font-bold hover:text-primary"
           >
             About
           </button>
