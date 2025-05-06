@@ -13,24 +13,26 @@ export function CategoryTabs({ activeCategory, setActiveCategory, setActiveSubca
   };
 
   return (
-    <div className="flex flex-wrap mb-8 border-b border-border">
-      {Object.keys(categories).map((category) => (
-        <button
-          key={category}
-          className={`flex items-center px-6 py-3 font-medium transition-colors ${
-            activeCategory === category 
-              ? 'text-primary border-b-2 border-primary' 
-              : 'text-black hover:text-primary'
-          }`}
-          onClick={() => {
-            setActiveCategory(category);
-            setActiveSubcategory(categories[category][0]);
-          }}
-        >
-          {getCategoryIcon(category)}
-          <span className="ml-2">{category}</span>
-        </button>
-      ))}
+    <div className="flex flex-wrap mb-8 border-b border-border overflow-x-auto pb-1 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+      <div className="flex min-w-full md:flex-wrap">
+        {Object.keys(categories).map((category) => (
+          <button
+            key={category}
+            className={`flex items-center px-3 sm:px-6 py-3 font-medium transition-colors whitespace-nowrap ${
+              activeCategory === category 
+                ? 'text-primary border-b-2 border-primary' 
+                : 'text-black hover:text-primary'
+            }`}
+            onClick={() => {
+              setActiveCategory(category);
+              setActiveSubcategory(categories[category][0]);
+            }}
+          >
+            {getCategoryIcon(category)}
+            <span className="ml-2">{category}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

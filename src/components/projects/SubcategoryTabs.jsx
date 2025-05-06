@@ -21,21 +21,23 @@ export function SubcategoryTabs({ activeCategory, categories, activeSubcategory,
   };
 
   return (
-    <div className="flex flex-wrap mb-8">
-      {categories[activeCategory].map((subcategory) => (
-        <button
-          key={subcategory}
-          className={`flex items-center px-4 py-2 mr-4 mb-4 rounded-full transition-colors ${
-            activeSubcategory === subcategory
-              ? 'bg-primary text-white border border-primary/20 font-medium'
-              : 'bg-background text-foreground border border-border hover:bg-muted'
-          }`}
-          onClick={() => setActiveSubcategory(subcategory)}
-        >
-          <span className="mr-2">{getSubcategoryIcon(subcategory)}</span>
-          {subcategory}
-        </button>
-      ))}
+    <div className="mb-8 overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+      <div className="flex flex-nowrap md:flex-wrap min-w-max md:min-w-0">
+        {categories[activeCategory].map((subcategory) => (
+          <button
+            key={subcategory}
+            className={`flex items-center px-4 py-2 mr-2 md:mr-4 mb-4 rounded-full transition-colors whitespace-nowrap ${
+              activeSubcategory === subcategory
+                ? 'bg-primary text-white border border-primary/20 font-medium'
+                : 'bg-background text-foreground border border-border hover:bg-muted'
+            }`}
+            onClick={() => setActiveSubcategory(subcategory)}
+          >
+            <span className="mr-2">{getSubcategoryIcon(subcategory)}</span>
+            {subcategory}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
