@@ -94,16 +94,16 @@ export function ProjectDetail({
           <p className="text-base md:text-xl text-foreground max-w-3xl mb-6">{description}</p>
           
           {/* Project Links */}
-          <div className="flex flex-wrap gap-3 md:gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-3">
             {links.github && (
               <a 
                 href={links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 md:px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors text-sm md:text-base"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors text-xs md:text-sm"
               >
-                <Github size={16} className="md:size-18" />
-                <span>GitHub Repo</span>
+                <Github size={14} />
+                <span>GitHub</span>
               </a>
             )}
             
@@ -112,10 +112,10 @@ export function ProjectDetail({
                 href={links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 md:px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors text-sm md:text-base"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors text-xs md:text-sm"
               >
-                <ExternalLink size={16} className="md:size-18" />
-                <span>Live Demo</span>
+                <ExternalLink size={14} />
+                <span>Demo</span>
               </a>
             )}
           </div>
